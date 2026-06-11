@@ -1,0 +1,30 @@
+---
+description: "State management rules for prototypes"
+globs: ["src/routes/**", "src/components/**", "src/machines/**"]
+---
+
+# State Management
+
+Use the simplest state model that makes the prototype clear.
+
+## Decision Order
+1. Static mock data for fixed screens.
+2. URL params for state that should be shareable.
+3. `useState` for local controls.
+4. React context for nearby shared state.
+5. XState for workflows with meaningful states, transitions, guards, or effects.
+
+## XState
+- Use XState when a prototype has steps, modes, async lifecycle, approvals, or branching.
+- Put machines in `src/machines/`.
+- Name events explicitly with user intent, not implementation details.
+
+## Effects
+- Avoid `useEffect` for derived state.
+- Use event handlers for user actions.
+- Use `useMemo` for expensive derived values.
+- Use `useEffect` only to sync with external systems.
+
+## Data
+- Keep prototype data simple and easy to replace.
+- Use the optional Hono API only when a fetch boundary is useful for the prototype.

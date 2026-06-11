@@ -1,0 +1,30 @@
+---
+description: "UI and component rules for Workrate prototypes"
+globs: ["src/components/**", "src/routes/**"]
+---
+
+# Components
+
+## shadcn/ui
+- Use installed shadcn/ui primitives from `src/components/ui` first.
+- Compose screens from existing shadcn blocks and app components before creating new primitives.
+- Avoid editing `src/components/ui` unless a generated component needs a small compatibility fix.
+- Add registry items with `bun run shadcn:add -- <item>`.
+
+## Workrate Shell
+- Keep `public/logo.svg` as the sidebar logo unless asked otherwise.
+- Keep sidebar and topbar alignment pixel-clean.
+- Keep dashboard styling restrained, dense, and operational.
+- Avoid marketing-page hero sections in this repo.
+
+## Component Style
+- Prefer small, focused components.
+- Use `@/` imports for internal files.
+- Use `cn()` from `src/lib/utils.ts` for conditional classes.
+- Use lucide-react icons for UI actions.
+- Keep text fitting cleanly on desktop and mobile.
+
+## Routes
+- Route files live in `src/routes/` and are managed by TanStack Router.
+- Shared screen components live in `src/components/`.
+- Keep the start page useful; do not add intro/landing screens unless requested.

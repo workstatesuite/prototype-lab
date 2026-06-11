@@ -1,0 +1,48 @@
+---
+description: "Prototype-first workflow for agents using this repo"
+alwaysApply: true
+---
+
+# Prototype Workflow
+
+This repo is a frontend-first base for Workrate prototypes.
+
+## Goals
+- Build clickable, realistic UI prototypes quickly.
+- Keep the app easy for another agent or developer to continue.
+- Prefer simple frontend mocks over backend infrastructure.
+- Preserve the Workrate dashboard theme, logo, and shell unless the task asks for a different direction.
+
+## Stack
+- Vite + React + TypeScript
+- TanStack Router file routes
+- Tailwind CSS v4
+- shadcn/ui
+- XState for meaningful multi-step or lifecycle state
+- Bun + Hono for optional real API behavior
+- Neon Postgres for optional shared persistent data
+
+## Workflow
+- Start from the dashboard at `/`.
+- Add routes as files in `src/routes/`.
+- Use `src/routes/__root.tsx` for shared route layout.
+- Let TanStack Router generate `src/routeTree.gen.ts`.
+- Create `src/machines/` only when a flow has real states or transitions.
+- Keep mock data near the feature using it.
+- Use `bun install`, `bun run dev`, `bun run lint`, and `bun run build`.
+- Use `bun run test` when reusable logic, route behavior, or state machines change.
+- Use `bun run dev:api` only when the prototype needs the optional API.
+
+## Backend
+- Keep the web app frontend-first by default.
+- Use `apps/api` for Bun + Hono routes when the prototype needs real API behavior.
+- Put the Neon connection string in `apps/api/.env` as `DATABASE_URL`.
+- Leave `DATABASE_URL` empty when no database is needed.
+- Do not commit `.env` files or database credentials.
+
+## Avoid
+- Production auth systems.
+- Database migrations unless the prototype explicitly needs a schema.
+- Cloud infrastructure.
+- Complex test suites for throwaway prototype screens.
+- Large abstractions before a second real use case exists.

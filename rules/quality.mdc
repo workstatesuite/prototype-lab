@@ -1,0 +1,24 @@
+---
+description: "Lightweight quality checks for prototype work"
+alwaysApply: true
+---
+
+# Quality
+
+## Before Finishing
+- Run `bun run lint`.
+- Run `bun run test`.
+- Run `bun run build`.
+- Make sure `/` still renders the dashboard.
+- Keep the worktree clean when publishing changes.
+
+## Code
+- Use TypeScript without `any`.
+- Prefer named exports.
+- Keep changes scoped to the requested prototype.
+- Remove unused prototype-specific screens, assets, and routes.
+- Do not leave tokens, secrets, or private URLs in tracked files.
+
+## Testing
+- Do not build a full test suite for simple visual prototypes.
+- Add focused tests only for reusable logic, parsers, state machines, or risky behavior.

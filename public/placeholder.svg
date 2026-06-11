@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Placeholder image">
+  <rect width="1200" height="900" fill="#e7e7e7"/>
+  <path d="M0 900 1200 0" stroke="#c9c9c9" stroke-width="6"/>
+  <path d="M0 0 1200 900" stroke="#c9c9c9" stroke-width="6"/>
+</svg>
