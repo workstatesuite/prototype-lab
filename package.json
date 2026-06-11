@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite",
     "dev:api": "bun run --cwd apps/api dev",
-    "build": "tsc -b && bun run build:api && vite build",
+    "build": "tsc -b && $npm_execpath run build:api && vite build",
     "build:api": "tsc -p apps/api/tsconfig.json --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
